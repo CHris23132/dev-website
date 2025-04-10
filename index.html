@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Walsh - iOS & macOS Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #007AFF, #5856D6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #6e6e73;
+            margin-bottom: 2rem;
+        }
+
+        .projects {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1d1d1f;
+        }
+
+        .project-info p {
+            color: #6e6e73;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .footer-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1d1d1f;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .footer-link {
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #5856D6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Christopher Walsh</h1>
+            <p class="subtitle">iOS & macOS Developer</p>
+        </header>
+
+        <div class="projects">
+            <div class="project-card">
+                <div class="project-info">
+                    <h2>Margaret</h2>
+                    <p>An all-in-one tool for SMB owners to track expenses, income, calculate taxes, write quotes, invoices and marketing with your saved inventory and products.</p>
+                </div>
+                <div class="project-image">
+                    <img src="assets/3 iOS Apps Released and One MacOS App in Stores Now (2).png" alt="Margaret App Screenshots">
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h2>Walapy</h2>
+                    <p>A innovative app that makes the news experience great. Summarize real and up to date articles from available big data and present it with the help of AI and natural language models to summarize the news in a concise and readable manner.</p>
+                </div>
+                <div class="project-image">
+                    <img src="assets/Walapy-news (1).png" alt="Walapy App Screenshots">
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h2>AR Stop Motion</h2>
+                    <p>AR stop motion is an application using cutting edge augmented reality technology based on my childhood passion of making stop motion movies with a small DVD camera. Inspired by 3-D engines like blender, the world is your viewport as you drag and drop place objects and characters pre-prepared ready to make awesome scenes anywhere. Create 3-D movies and VFX shots on an iPhone - anyone can do it.</p>
+                </div>
+                <div class="project-image">
+                    <img src="assets/Untitled design (58).png" alt="AR Stop Motion App Screenshots">
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h2>Make Apps</h2>
+                    <p>Make Apps is an app that allows anyone to get into the world of design and app building with three main features. The canvas for planning out your app with graphics, and the prompt builder section that can help you build prompts that help you explain your idea in a structured way, helping out with terminology and correct structure of an app.</p>
+                </div>
+                <div class="project-image">
+                    <img src="assets/Make-Apps.png" alt="Make Apps Screenshots">
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h2>Podcast Producer</h2>
+                    <p>Podcast Producer democratizes production value by allowing users to pre-prepare all of their shows by entering their topics, notes, and descriptions as well as assign allocated time to each segment to ensure their show stays on task and covers all topics. When doing the show, open up the app and with the rundown style interface, you have all the information at the ready with a reminder of the time. The AI producer can help fetch articles relevant to your heading and description for your topic segment, feeding talking points just like a real producer would when they feed talent information.</p>
+                </div>
+                <div class="project-image">
+                    <img src="assets/Podcast-producer-image.png" alt="Podcast Producer Screenshots">
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <h3>More Projects</h3>
+                <div class="footer-links">
+                    <a href="real-strike.html" class="footer-link">Real Strike Warfare</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

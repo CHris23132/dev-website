@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Strike Warfare - Christopher Walsh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 33.33%;
+            max-width: 400px;
+            margin: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .hero-headline {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #ff3d00, #ff9100);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero-text {
+            font-size: 1.25rem;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0 3rem 0;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(45deg, #ff3d00, #ff9100);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 50%;
+            }
+
+            .hero-headline {
+                font-size: 2rem;
+            }
+
+            .hero-text {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="assets/Real-Strike-Logo2.png" alt="Real Strike Warfare Logo" class="logo">
+        
+        <div class="nav-links">
+            <a href="policy.html" class="nav-link">Policy</a>
+            <a href="terms.html" class="nav-link">Terms of Service</a>
+            <a href="support.html" class="nav-link">Support</a>
+        </div>
+        
+        <div class="hero">
+            <h1 class="hero-headline">The best of your favourite first person shooters in real life!</h1>
+            <p class="hero-text">
+                Real Strike Warfare is everything you love about first person shooters in real life. 1v1 matches, Free for all & search and destroy. All of the fun from games like paintball, airsoft and laser tag with the responsiveness and interactivity of your favourite video games. Using AI cutting edge computer vision to bring an interactive game like experience to the real world. Real game logic built for action and endless fun. Accessible to all and playable anywhere.
+            </p>
+        </div>
+    </div>
+</body>
+</html> 
