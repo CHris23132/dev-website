@@ -31,12 +31,12 @@
         .logo {
             width: 33.33%;
             max-width: 400px;
-            margin: 2rem 0;
+            margin: 1rem 0;
         }
 
         .hero {
             text-align: center;
-            margin: 4rem 0;
+            margin: 2rem 0;
         }
 
         .hero-headline {
@@ -49,18 +49,26 @@
             line-height: 1.2;
         }
 
+        .video-container {
+            margin: 2rem auto;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 605px;
+        }
+
         .hero-text {
             font-size: 1.25rem;
             color: #aaa;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 2rem auto 0;
             line-height: 1.8;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
-            margin: 1rem 0 3rem 0;
+            margin: 0.5rem 0 1rem 0;
         }
 
         .nav-link {
@@ -92,6 +100,30 @@
             transform: scaleX(1);
         }
 
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .download-button img {
+            height: 24px;
+            margin-right: 10px;
+        }
+
         @media (max-width: 768px) {
             .logo {
                 width: 50%;
@@ -119,7 +151,33 @@
         </div>
         
         <div class="hero">
-            <h1 class="hero-headline">The best of your favourite first person shooters in real life!</h1>
+            <a href="https://apps.apple.com/ca/app/real-strike-warfare/id6744386499" class="download-button" target="_blank">
+                <img src="assets/App_Store_(iOS).svg (1).png" alt="App Store Icon">
+                Download Now
+            </a>
+
+            <h1 class="hero-headline">Your favourite first person shooters in real life!</h1>
+            
+            <div class="video-container">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@realstrikewarfare/video/7494113543457967365" data-video-id="7494113543457967365" style="max-width: 605px;min-width: 325px;">
+                    <section>
+                        <a target="_blank" title="@realstrikewarfare" href="https://www.tiktok.com/@realstrikewarfare?refer=embed">@realstrikewarfare</a>
+                        Your favourite first person shooters in real life! Real Strike Warfare uses ai computer vision to play first person shooters in real life
+                        <a title="nerf" target="_blank" href="https://www.tiktok.com/tag/nerf?refer=embed">#nerf</a>
+                        <a title="warzone" target="_blank" href="https://www.tiktok.com/tag/warzone?refer=embed">#warzone</a>
+                        <a title="callofduty" target="_blank" href="https://www.tiktok.com/tag/callofduty?refer=embed">#callofduty</a>
+                        <a title="paintball" target="_blank" href="https://www.tiktok.com/tag/paintball?refer=embed">#paintball</a>
+                        <a title="fortnite" target="_blank" href="https://www.tiktok.com/tag/fortnite?refer=embed">#fortnite</a>
+                        <a title="pubg" target="_blank" href="https://www.tiktok.com/tag/pubg?refer=embed">#pubg</a>
+                        <a title="battlefield" target="_blank" href="https://www.tiktok.com/tag/battlefield?refer=embed">#battlefield</a>
+                        <a title="airsoft" target="_blank" href="https://www.tiktok.com/tag/airsoft?refer=embed">#airsoft</a>
+                        <a title="rpg" target="_blank" href="https://www.tiktok.com/tag/rpg?refer=embed">#rpg</a>
+                        <a target="_blank" title="♬ original sound - realstrikewarfare" href="https://www.tiktok.com/music/original-sound-7494113535354899206?refer=embed">♬ original sound - realstrikewarfare</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+
             <p class="hero-text">
                 Real Strike Warfare is everything you love about first person shooters in real life. 1v1 matches, Free for all & search and destroy. All of the fun from games like paintball, airsoft and laser tag with the responsiveness and interactivity of your favourite video games. Using AI cutting edge computer vision to bring an interactive game like experience to the real world. Real game logic built for action and endless fun. Accessible to all and playable anywhere.
             </p>
