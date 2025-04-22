@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo - Just Take a Photo and Get Started</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: url('assets/BG-image-for-web.png') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 200px;
+            margin: 2rem 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: #fff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .hero {
+            text-align: center;
+            margin: 6rem 0;
+            max-width: 800px;
+        }
+
+        .hero-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .back-link::before {
+            content: '←';
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            .logo {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <a href="index.html" class="back-link">Back to Portfolio</a>
+    <div class="container">
+        <img src="assets/algo-logo-transparent.png" alt="Algo Logo" class="logo">
+        
+        <nav class="nav-links">
+            <a href="algo-support.html" class="nav-link">Support</a>
+            <a href="algo-policy.html" class="nav-link">Policy</a>
+            <a href="algo-terms.html" class="nav-link">Terms of Service</a>
+        </nav>
+        
+        <div class="hero">
+            <h1 class="hero-text">Just take a photo and get started. No bios. No fake presentation that makes you feel like you are marketing yourself. Just you! Take a selfie, we analyze for style and aesthetic type and we match you with people just like you.</h1>
+        </div>
+    </div>
+</body>
+</html> 
