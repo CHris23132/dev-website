@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/real-strike-favicon.png">
-    <title>Support - Real Strike Warfare</title>
+    <title>Support - Time Travel AI</title>
     <style>
         * {
             margin: 0;
@@ -14,8 +13,8 @@
         }
 
         body {
-            background: #000;
-            color: #fff;
+            background: #fff6ea;
+            color: #1d1d1f;
             line-height: 1.6;
         }
 
@@ -25,52 +24,66 @@
             padding: 2rem;
         }
 
-        .back-link {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .back-link:hover {
-            opacity: 1;
-        }
-
-        .back-link::before {
-            content: '←';
-            font-size: 1.2em;
+        header {
+            text-align: center;
+            padding: 2rem 0;
         }
 
         h1 {
             font-size: 2.5rem;
-            margin: 3rem 0 2rem;
-            background: linear-gradient(45deg, #ff3d00, #ff9100);
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #007AFF, #5856D6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .content {
-            color: #aaa;
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #007AFF;
+            text-decoration: none;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #5856D6;
+        }
+
+        .support-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .support-content h2 {
+            color: #1d1d1f;
+            margin-bottom: 1rem;
             margin-top: 2rem;
+        }
+
+        .support-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .support-content p {
+            color: #6e6e73;
+            margin-bottom: 1rem;
         }
 
         .contact-info {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-top: 2rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
         }
 
         .contact-item {
-            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #6e6e73;
         }
 
         .contact-item:last-child {
@@ -78,67 +91,80 @@
         }
 
         .contact-label {
-            color: #ff9100;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            display: block;
+            font-weight: bold;
+            min-width: 80px;
+            color: #1d1d1f;
         }
 
         .contact-value {
-            color: #fff;
-        }
-
-        .contact-value a {
-            color: #fff;
+            color: #007AFF;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .contact-value a:hover {
-            color: #ff9100;
+        .contact-value:hover {
+            color: #5856D6;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-            }
-
             h1 {
                 font-size: 2rem;
-                margin: 2rem 0 1.5rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .support-content {
+                padding: 1.5rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-label {
+                margin-bottom: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <a href="real-strike.html" class="back-link">Back to Real Strike</a>
     <div class="container">
-        <h1>Support</h1>
-        <div class="content">
-            <p>We're here to help! If you have any questions, concerns, or need assistance with Real Strike Warfare, please don't hesitate to reach out to us using any of the following contact methods:</p>
-            
+        <header>
+            <a href="time-travel-ai.html" class="back-link">← Back to Time Travel AI</a>
+            <h1>Support</h1>
+        </header>
+
+        <div class="support-content">
+            <h2>Get Help</h2>
+            <p>Need assistance with Time Travel AI? We're here to help! Contact us through any of the methods below and we'll get back to you as soon as possible.</p>
+
             <div class="contact-info">
                 <div class="contact-item">
-                    <span class="contact-label">Location</span>
-                    <div class="contact-value">Toronto, Ontario, Canada</div>
+                    <span class="contact-label">Email:</span>
+                    <a href="mailto:play3dinc@gmail.com" class="contact-value">play3dinc@gmail.com</a>
                 </div>
-                
                 <div class="contact-item">
-                    <span class="contact-label">Phone</span>
-                    <div class="contact-value">
-                        <a href="tel:905-979-8389">905-979-8389</a>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <span class="contact-label">Email</span>
-                    <div class="contact-value">
-                        <a href="mailto:play3dinc@gmail.com">play3dinc@gmail.com</a>
-                    </div>
+                    <span class="contact-label">Phone:</span>
+                    <a href="tel:905-979-8389" class="contact-value">905-979-8389</a>
                 </div>
             </div>
-            
-            <p style="margin-top: 2rem;">Our support team is available during business hours (EST) and will respond to your inquiry as soon as possible.</p>
+
+            <h2>What We Can Help With</h2>
+            <p>Our support team can assist you with:</p>
+            <ul style="color: #6e6e73; margin-left: 2rem; margin-bottom: 1rem;">
+                <li>Technical issues and troubleshooting</li>
+                <li>App functionality questions</li>
+                <li>Privacy and data concerns</li>
+                <li>Feature requests and feedback</li>
+                <li>General inquiries about Time Travel AI</li>
+            </ul>
+
+            <h2>Response Time</h2>
+            <p>We typically respond to all inquiries within 24-48 hours during business days. For urgent technical issues, please include "URGENT" in your email subject line.</p>
+
+            <p><em>Thank you for using Time Travel AI!</em></p>
         </div>
     </div>
 </body>

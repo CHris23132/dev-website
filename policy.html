@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/real-strike-favicon.png">
-    <title>Privacy Policy - Real Strike Warfare</title>
+    <title>Privacy Policy - Time Travel AI</title>
     <style>
         * {
             margin: 0;
@@ -14,8 +13,8 @@
         }
 
         body {
-            background: #000;
-            color: #fff;
+            background: #fff6ea;
+            color: #1d1d1f;
             line-height: 1.6;
         }
 
@@ -25,78 +24,106 @@
             padding: 2rem;
         }
 
-        .back-link {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .back-link:hover {
-            opacity: 1;
-        }
-
-        .back-link::before {
-            content: '←';
-            font-size: 1.2em;
+        header {
+            text-align: center;
+            padding: 2rem 0;
         }
 
         h1 {
             font-size: 2.5rem;
-            margin: 3rem 0 2rem;
-            background: linear-gradient(45deg, #ff3d00, #ff9100);
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #007AFF, #5856D6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .content {
-            color: #aaa;
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #007AFF;
+            text-decoration: none;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #5856D6;
+        }
+
+        .policy-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .policy-content h2 {
+            color: #1d1d1f;
+            margin-bottom: 1rem;
             margin-top: 2rem;
         }
 
-        .content p {
-            margin-bottom: 1.5rem;
+        .policy-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .policy-content p {
+            color: #6e6e73;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content ul {
+            color: #6e6e73;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-            }
-
             h1 {
                 font-size: 2rem;
-                margin: 2rem 0 1.5rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .policy-content {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <a href="real-strike.html" class="back-link">Back to Real Strike</a>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <div class="content">
-            <p>At Real Strike Warfare, we take your privacy seriously. We want to be completely transparent about our data practices:</p>
-            
-            <p>We do not collect, store, or process any personal data. Our application uses your device's camera solely for the purpose of powering our computer vision system, which:</p>
-            
-            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
-                <li>Does not record or capture any images or video</li>
-                <li>Does not build user profiles</li>
-                <li>Does not collect or store any user data</li>
-                <li>Only uses real-time processing for object detection and human figure detection to enable gameplay</li>
+        <header>
+            <a href="time-travel-ai.html" class="back-link">← Back to Time Travel AI</a>
+            <h1>Privacy Policy</h1>
+        </header>
+
+        <div class="policy-content">
+            <h2>Data Collection Policy</h2>
+            <p>At Time Travel AI, we are committed to protecting your privacy and ensuring transparency about how we handle your information.</p>
+
+            <h2>No Data Collection</h2>
+            <p>We do not collect any personal data from our users. Our application operates entirely on your device without transmitting any information to our servers.</p>
+
+            <h2>Permissions Usage</h2>
+            <p>Our app requests the following permissions strictly for creating personalized stories:</p>
+            <ul>
+                <li><strong>Location Permission:</strong> Used only to create stories that take place in your current setting. We do not store, track, or transmit your location data.</li>
+                <li><strong>Camera Permission:</strong> Used only to capture images for story creation. All images are processed locally on your device and are never saved to our servers.</li>
             </ul>
-            
-            <p>The computer vision system operates in real-time on your device, processing the camera feed instantly without storing or transmitting any data. This technology is used exclusively to create an interactive gaming experience, similar to how a motion sensor works in traditional gaming consoles.</p>
-            
-            <p>We believe in creating a fun, immersive experience while respecting your privacy. Our technology is designed to be secure, local, and completely private.</p>
+
+            <h2>Local Processing Only</h2>
+            <p>All story generation and image processing happens locally on your device. We do not have access to any of the content you create or any information about your usage of the app.</p>
+
+            <h2>No Data Storage</h2>
+            <p>As a company, we do not collect, store, or maintain any data about our users. Your privacy is our top priority, and we have designed our application to respect this commitment.</p>
+
+            <h2>Contact Information</h2>
+            <p>If you have any questions about our privacy policy, please contact us at <a href="mailto:play3dinc@gmail.com">play3dinc@gmail.com</a>.</p>
+
+            <p><em>Last updated: December 2024</em></p>
         </div>
     </div>
 </body>
