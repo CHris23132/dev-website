@@ -1001,6 +1001,21 @@
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            // Reinitialize mobile detection and animations on resize
+            const newIsMobile = window.innerWidth <= 768;
+            if (newIsMobile !== isMobile) {
+                // Reinitialize animations for new screen size
+                setTimeout(() => {
+                    document.querySelectorAll('.project-card').forEach(card => {
+                        if (newIsMobile) {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(30px)';
+                            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        }
+                    });
+                }, 100);
+            }
         });
         
         // Initialize Three.js after a short delay to ensure loading screen is visible
@@ -1037,22 +1052,31 @@
             });
         });
         
-        // Intersection Observer for scroll animations
+        // Intersection Observer for scroll animations - Mobile Optimized
+        const isMobile = window.innerWidth <= 768;
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: isMobile ? 0.05 : 0.1,
+            rootMargin: isMobile ? '0px 0px -20px 0px' : '0px 0px -50px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.animationPlayState = 'running';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
         
-        // Observe all project cards
+        // Observe all project cards with mobile-specific setup
         document.querySelectorAll('.project-card').forEach(card => {
+            // Reset animation state for mobile
+            if (isMobile) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            }
             observer.observe(card);
         });
         
@@ -1130,25 +1154,56 @@
 
         // Listen for scroll events to update navigation
         window.addEventListener('scroll', updateActiveNavDot);
+        
+        // Mobile-specific scroll handler for better animation triggering
+        if (isMobile) {
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    // Force re-trigger animations for visible elements
+                    const visibleCards = document.querySelectorAll('.project-card');
+                    visibleCards.forEach(card => {
+                        const rect = card.getBoundingClientRect();
+                        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                        if (isVisible && card.style.opacity === '0') {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, 50);
+            });
+        }
 
-        // Intersection Observer for section animations
+        // Intersection Observer for section animations - Mobile Optimized
+        const sectionObserverOptions = {
+            threshold: isMobile ? 0.05 : 0.1,
+            rootMargin: isMobile ? '0px 0px -30px 0px' : '0px 0px -100px 0px'
+        };
+        
         const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    
+                    // Trigger animations for child elements with a slight delay
+                    const projectCards = entry.target.querySelectorAll('.project-card');
+                    projectCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 100); // Stagger the animations
+                    });
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        });
+        }, sectionObserverOptions);
 
-        // Observe all sections for animation
+        // Observe all sections for animation with mobile-specific setup
         document.querySelectorAll('.section').forEach(section => {
             section.style.opacity = '0';
-            section.style.transform = 'translateY(50px)';
-            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = isMobile ? 'opacity 0.6s ease, transform 0.6s ease' : 'opacity 0.8s ease, transform 0.8s ease';
             sectionObserver.observe(section);
         });
     </script>
