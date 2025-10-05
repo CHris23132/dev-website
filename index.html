@@ -413,12 +413,56 @@
             border-radius: 15px;
             transition: all 0.5s ease;
             filter: brightness(0.9) contrast(1.1);
+            margin-bottom: 2rem;
         }
 
         .project-card:hover .project-image img {
             transform: scale(1.05);
             filter: brightness(1.1) contrast(1.2);
             box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 560px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            display: block;
+        }
+
+        .project-card:hover .video-container {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 255, 255, 0.5);
+        }
+
+        .project-image video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: all 0.5s ease;
+            filter: brightness(0.9) contrast(1.1);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+        }
+
+        .project-card:hover .project-image video {
+            transform: scale(1.05);
+            filter: brightness(1.1) contrast(1.2);
+            box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .video-container iframe {
+                height: 250px;
+            }
         }
 
         .footer-link {
@@ -564,8 +608,8 @@
 
     <!-- Section Navigation -->
     <div class="navigation-menu">
-        <div class="nav-dot active" data-section="AI Research" onclick="scrollToSection('ai-research')"></div>
-        <div class="nav-dot" data-section="Computer Vision" onclick="scrollToSection('computer-vision')"></div>
+        <div class="nav-dot active" data-section="Computer Vision" onclick="scrollToSection('computer-vision')"></div>
+        <div class="nav-dot" data-section="AI Research" onclick="scrollToSection('ai-research')"></div>
         <div class="nav-dot" data-section="Mobile & Desktop" onclick="scrollToSection('mobile-desktop')"></div>
         <div class="nav-dot" data-section="Web Applications" onclick="scrollToSection('web-applications')"></div>
         <div class="nav-dot" data-section="Augmented Reality" onclick="scrollToSection('augmented-reality')"></div>
@@ -579,25 +623,6 @@
         </header>
 
         <div class="projects">
-            <!-- AI Research Section -->
-            <section class="section" id="ai-research">
-                <div class="section-header">
-                    <h2 class="section-title">AI Research</h2>
-                    <p class="section-subtitle">Machine Learning & Deep Learning Projects</p>
-                </div>
-                <div class="section-projects">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <h2>AI/ML PyTorch Custom Model Pre/Post Training</h2>
-                            <p>Custom datasets pre training optimized for training custom likeness and style models to create ai image sequences from video. Optimized model inference for device performance and visual consistency. Supported a creative workflow that merged AI with storytelling.</p>
-                        </div>
-                        <div class="project-image">
-                            <img src="assets/Ai-ML-Study.png" alt="AI/ML Study Screenshots">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- Computer Vision Section -->
             <section class="section" id="computer-vision">
                 <div class="section-header">
@@ -605,6 +630,19 @@
                     <p class="section-subtitle">Advanced CV & AI-Powered Solutions</p>
                 </div>
                 <div class="section-projects">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h2>Yukon - Live Object Detection & Segmentation</h2>
+                            <p>This app built for live video data labeling for Object Detection & Segmentation. This app is a efficient and effective implementation of TinyYolo-V7 a state of the art object detection model capable of running on mobile devices optimized for iOS as well as an implementation of DeepLabv3 for image segmentation using segnets. I used a built in vision library to run live accurate pose detection to detect the acurate pose.</p>
+                        </div>
+                        <div class="project-image">
+                            <video width="100%" height="auto" controls style="border-radius: 15px; margin-bottom: 1rem;">
+                                <source src="assets/YUKON Video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
                     <div class="project-card">
                         <div class="project-info">
                             <h2>Real Strike Warfare</h2>
@@ -618,6 +656,34 @@
                 </div>
             </section>
 
+            <!-- AI Research Section -->
+            <section class="section" id="ai-research">
+                <div class="section-header">
+                    <h2 class="section-title">AI Research</h2>
+                    <p class="section-subtitle">Machine Learning & Deep Learning Projects</p>
+                </div>
+                <div class="section-projects">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h2>AI/ML PyTorch Custom Model Pre/Post Training</h2>
+                            <p>Christopher Walsh is a pioneering AI researcher and engineer who has developed cutting-edge applications leveraging state-of-the-art technology. As a full-stack developer, he has built numerous AI and computer vision applications using the same transformer architecture that powers ChatGPT and other top LLMs. His expertise spans custom model training for image classification and generation, data collection and labeling pipelines, and real-time inference optimization. Christopher's comprehensive understanding of AI development helps organizations navigate the AI era by establishing robust data workflows and training custom image classifiers from labeled video data, capturing critical operational moments and automating complex tasks within modern enterprises.</p>
+                        </div>
+                        <div class="project-image">
+                            <img src="assets/Ai-ML-Study.png" alt="AI/ML Study Screenshots">
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/K_ALeKfOh4w?si=6VYptnktNUcAZm5x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-container">
+                                <video width="100%" height="315" controls style="border-radius: 15px;">
+                                    <source src="assets/Result-for-ai-training.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Mobile & Desktop Applications Section -->
             <section class="section" id="mobile-desktop">
                 <div class="section-header">
@@ -625,6 +691,16 @@
                     <p class="section-subtitle">iOS, macOS & Cross-Platform Solutions</p>
                 </div>
                 <div class="section-projects">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h2>Understudy</h2>
+                            <p>An app that uses cutting edge AI apis to analyze a client or persons profile to create a profile and then generate a list of suggested topics of interest as well as topics to avoid when meeting with this person for a high value interaction. The system then uses live News API's to allow the user to click on a suggested discussion topic and fetch live up to date news stories relevant to the suggested topic.</p>
+                        </div>
+                        <div class="project-image">
+                            <img src="assets/understudy-app.jpg" alt="Understudy App Screenshots">
+                        </div>
+                    </div>
+
                     <div class="project-card">
                         <div class="project-info">
                             <h2>Margaret</h2>
