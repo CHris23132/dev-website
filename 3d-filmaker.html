@@ -10,11 +10,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap');
 
         :root {
-            --bg-dark: #0f151a;
-            --bg-mid: #1a2a33;
-            --glow: #f7c843;
-            --accent: #ff7a3d;
-            --mint: #2de2a8;
+            --bg-dark: #0a0e12;
+            --bg-mid: #121c24;
+            --glow: #00b4d8;
+            --accent: #48cae4;
+            --mint: #90e0ef;
             --text: #f3f2ed;
             --muted: rgba(243, 242, 237, 0.7);
         }
@@ -28,8 +28,8 @@
         body {
             font-family: 'Manrope', sans-serif;
             color: var(--text);
-            background: radial-gradient(circle at top, rgba(247, 200, 67, 0.2), transparent 45%),
-                        radial-gradient(circle at 20% 70%, rgba(45, 226, 168, 0.15), transparent 55%),
+            background: radial-gradient(circle at top, rgba(0, 180, 216, 0.15), transparent 45%),
+                        radial-gradient(circle at 80% 30%, rgba(0, 119, 182, 0.12), transparent 50%),
                         linear-gradient(160deg, var(--bg-dark), var(--bg-mid));
             min-height: 100vh;
         }
@@ -43,7 +43,7 @@
             position: absolute;
             width: 420px;
             height: 420px;
-            background: radial-gradient(circle, rgba(255, 122, 61, 0.35), transparent 70%);
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.3), transparent 70%);
             filter: blur(10px);
             top: -120px;
             right: -140px;
@@ -141,16 +141,16 @@
             border: none;
             font-weight: 600;
             text-decoration: none;
-            color: #111;
+            color: #0a0e12;
             background: linear-gradient(120deg, var(--glow), var(--accent));
-            box-shadow: 0 10px 30px rgba(255, 122, 61, 0.25);
+            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
             transition: transform 0.3s ease;
         }
 
         .btn.secondary {
             background: transparent;
             color: var(--text);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 180, 216, 0.5);
             box-shadow: none;
         }
 
@@ -160,7 +160,7 @@
 
         .hero-card {
             background: rgba(15, 21, 26, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.2);
             border-radius: 24px;
             padding: 1.5rem;
             backdrop-filter: blur(10px);
@@ -172,7 +172,8 @@
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: rgba(15, 21, 26, 0.8);
+            background: rgba(10, 14, 18, 0.9);
+            color: var(--glow);
             padding: 0.4rem 0.8rem;
             border-radius: 999px;
             font-size: 0.75rem;
@@ -222,8 +223,8 @@
             gap: 0.5rem;
             margin-top: 1rem;
             padding: 0.5rem 0.9rem;
-            background: rgba(45, 226, 168, 0.15);
-            border: 1px solid rgba(45, 226, 168, 0.3);
+            background: rgba(0, 180, 216, 0.15);
+            border: 1px solid rgba(0, 180, 216, 0.35);
             border-radius: 999px;
             font-size: 0.85rem;
             color: var(--mint);
@@ -260,7 +261,7 @@
 
         .strip {
             margin-top: 3.5rem;
-            background: linear-gradient(120deg, rgba(45, 226, 168, 0.2), rgba(255, 122, 61, 0.2));
+            background: linear-gradient(120deg, rgba(0, 180, 216, 0.2), rgba(0, 119, 182, 0.15));
             border-radius: 18px;
             padding: 2rem;
             display: flex;
@@ -326,7 +327,7 @@
         <div class="container">
             <div class="top-bar">
                 <div class="brand">
-                    <img src="assets/3D.png" alt="3D Filmaker" class="brand-logo">
+                    <img src="assets/3D-app.png" alt="3D Filmaker" class="brand-logo">
                 </div>
                 <nav class="nav-links">
                     <a class="nav-link" href="3d-filmaker-policy.html">Policy</a>
@@ -340,7 +341,7 @@
                     <p>3D Filmaker is an augmented reality filmmaking app that lets you create scenes with tracked 3D objects, virtual backgrounds, and animated characters—right inside your real environment. No complicated setup and no physical green screen required.</p>
                     <p style="margin-top: 1rem;">Place and anchor elements to walls, floors, and real-world surfaces, then film from different angles while everything stays locked in place. Set your shot, direct your actors, and capture the scene with video and audio recorded in-app.</p>
                     <div class="hero-actions">
-                        <a class="btn" href="mailto:play3dinc@gmail.com">Get in Touch</a>
+                        <a class="btn" href="3d-filmaker-contact.html">Get in Touch</a>
                         <a class="btn secondary" href="3d-filmaker-policy.html">Privacy & Data Policy</a>
                     </div>
                     <div class="privacy-badge">100% local — no data collection. The app runs entirely on your device.</div>
@@ -385,7 +386,7 @@
                     <h2>Create VFX-Style Shots on Your Phone</h2>
                     <p>Whether you’re making short films, skits, music videos, or social content, 3D Filmaker helps you create in-camera visual effects directly on your device.</p>
                 </div>
-                <a class="btn" href="mailto:play3dinc@gmail.com">Contact Us</a>
+                <a class="btn" href="3d-filmaker-contact.html">Contact Us</a>
             </section>
 
             <footer>
