@@ -158,6 +158,23 @@
             transform: translateY(-2px);
         }
 
+        .app-store-badge {
+            display: inline-block;
+            line-height: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .app-store-badge:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .app-store-badge img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
         .hero-card {
             background: rgba(15, 21, 26, 0.7);
             border: 1px solid rgba(0, 180, 216, 0.2);
@@ -341,6 +358,9 @@
                     <p>3D Filmmaker is an augmented reality filmmaking app that lets you create scenes with tracked 3D objects, virtual backgrounds, and animated characters—right inside your real environment. No complicated setup and no physical green screen required.</p>
                     <p style="margin-top: 1rem;">Place and anchor elements to walls, floors, and real-world surfaces, then film from different angles while everything stays locked in place. Set your shot, direct your actors, and capture the scene with video and audio recorded in-app.</p>
                     <div class="hero-actions">
+                        <a class="app-store-badge" href="https://apps.apple.com/ca/app/stopmotion-ar/id6618112316" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                            <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store">
+                        </a>
                         <a class="btn" href="3d-filmmaker-contact.html">Get in Touch</a>
                         <a class="btn secondary" href="3d-filmmaker-policy.html">Privacy & Data Policy</a>
                     </div>
