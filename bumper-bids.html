@@ -159,18 +159,49 @@ src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
         .app-store-cta {
             display: inline-block;
             line-height: 0;
+            padding: 8px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 0 0 0 rgba(247, 200, 67, 0.6),
+                        0 0 24px 4px rgba(247, 200, 67, 0.25);
+            animation: app-store-pulse 2s ease-in-out infinite,
+                       app-store-glow 2s ease-in-out infinite;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .app-store-cta:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+            opacity: 1;
+            animation: app-store-pulse-hover 2s ease-in-out infinite,
+                       app-store-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes app-store-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        @keyframes app-store-pulse-hover {
+            0%, 100% { transform: translateY(-3px) scale(1.02); }
+            50% { transform: translateY(-3px) scale(1.06); }
+        }
+
+        @keyframes app-store-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 2px rgba(247, 200, 67, 0.8),
+                            0 0 20px 6px rgba(247, 200, 67, 0.35);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(247, 200, 67, 0.4),
+                            0 0 32px 12px rgba(247, 200, 67, 0.5);
+            }
         }
 
         .app-store-badge {
             height: 44px;
             width: auto;
             display: block;
+            position: relative;
+            z-index: 1;
         }
 
         .btn {
