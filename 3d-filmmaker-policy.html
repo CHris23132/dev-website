@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6618112316">
     <base href="https://christopher-walsh-apps.com/">
     <title>3D Filmmaker - Privacy Policy</title>
     <link rel="icon" type="image/png" href="assets/chris-favicon2.png">
@@ -110,9 +111,53 @@ src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
             color: var(--muted);
             font-size: 0.9rem;
         }
+
+        /* Custom App Banner (Chrome & other non-Safari browsers) - thin bar */
+        .app-banner-custom {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 9999;
+            background: linear-gradient(180deg, #f7f7f8 0%, #e8e8ed 100%);
+            border-bottom: 1px solid #c8c8cc;
+            padding: 4px 10px;
+            align-items: center;
+            gap: 6px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        }
+        .app-banner-custom.is-visible { display: flex; }
+        .app-banner-custom-icon {
+            width: 28px; height: 28px; min-width: 28px; min-height: 28px;
+            border-radius: 6px; object-fit: contain; display: block;
+        }
+        .app-banner-custom-text { flex: 1; min-width: 0; }
+        .app-banner-custom-title { font-size: 12px; font-weight: 600; color: #1a1a1a; line-height: 1.15; }
+        .app-banner-custom-subtitle { font-size: 10px; color: #6e6e73; margin-top: 0; }
+        .app-banner-custom-get {
+            display: inline-block; padding: 4px 12px; background: #007aff; color: #fff;
+            font-size: 12px; font-weight: 600; border-radius: 12px; text-decoration: none; white-space: nowrap;
+        }
+        .app-banner-custom-get:hover { background: #0056b3; }
+        .app-banner-custom-close {
+            width: 22px; height: 22px; min-width: 22px; border: none; background: #d1d1d6; color: #6e6e73;
+            border-radius: 50%; font-size: 14px; line-height: 1; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; padding: 0;
+        }
+        .app-banner-custom-close:hover { background: #c0c0c5; color: #1a1a1a; }
+        .app-banner-custom-close::after { content: '×'; }
     </style>
 </head>
 <body>
+    <div id="app-banner-custom" class="app-banner-custom is-visible" aria-label="Get 3D Filmmaker app">
+        <img class="app-banner-custom-icon" src="" alt="" aria-hidden="true" data-src="assets/3D-app.png">
+        <div class="app-banner-custom-text">
+            <div class="app-banner-custom-title">3D Filmmaker</div>
+            <div class="app-banner-custom-subtitle">In-Camera VFX with AR</div>
+        </div>
+        <a class="app-banner-custom-get" href="https://apps.apple.com/ca/app/stopmotion-ar/id6618112316" target="_blank" rel="noopener noreferrer">Get</a>
+        <button type="button" class="app-banner-custom-close" onclick="document.getElementById('app-banner-custom').classList.remove('is-visible'); sessionStorage.setItem('3d-filmmaker-banner-dismissed', '1');" aria-label="Dismiss banner"></button>
+    </div>
     <div class="container">
         <a class="back-link" href="3d-filmmaker.html">← Back to 3D Filmmaker</a>
         <h1>Privacy Policy</h1>
@@ -130,5 +175,17 @@ src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
         </footer>
     </div>
     <script src="assets/google-ads-conversions.js"></script>
+    <script>
+        (function() {
+            var el = document.getElementById('app-banner-custom');
+            if (!el) return;
+            var ua = navigator.userAgent;
+            var isIOS = /iPhone|iPad|iPod/.test(ua);
+            var isSafari = /Safari/.test(ua) && !/Chrome|CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+            if (sessionStorage.getItem('3d-filmmaker-banner-dismissed') || (isIOS && isSafari)) el.classList.remove('is-visible');
+            var img = el.querySelector('.app-banner-custom-icon');
+            if (img && img.dataset.src) img.src = window.location.origin + '/' + img.dataset.src;
+        })();
+    </script>
 </body>
 </html>
