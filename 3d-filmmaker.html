@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6618112316">
     <base href="https://christopher-walsh-apps.com/">
     <title>3D Filmmaker - In-Camera VFX with AR</title>
     <meta name="description" content="Make in-camera VFX with AR: place tracked 3D objects, add virtual backgrounds (no green screen), apply LUTs live, and record video + audio.">
@@ -185,21 +186,52 @@ src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
             transform: translateY(-2px);
         }
 
-        .app-store-badge {
+        .app-store-cta {
             display: inline-block;
             line-height: 0;
+            padding: 8px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.6),
+                        0 0 24px 4px rgba(0, 180, 216, 0.25);
+            animation: app-store-pulse 2s ease-in-out infinite,
+                       app-store-glow 2s ease-in-out infinite;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        .app-store-badge:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
+        .app-store-cta:hover {
+            opacity: 1;
+            animation: app-store-pulse-hover 2s ease-in-out infinite,
+                       app-store-glow 2s ease-in-out infinite;
         }
 
-        .app-store-badge img {
-            height: 50px;
+        @keyframes app-store-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        @keyframes app-store-pulse-hover {
+            0%, 100% { transform: translateY(-3px) scale(1.02); }
+            50% { transform: translateY(-3px) scale(1.06); }
+        }
+
+        @keyframes app-store-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.8),
+                            0 0 20px 6px rgba(0, 180, 216, 0.35);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(0, 180, 216, 0.4),
+                            0 0 32px 12px rgba(0, 180, 216, 0.5);
+            }
+        }
+
+        .app-store-badge {
+            height: 44px;
             width: auto;
             display: block;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-card {
@@ -362,9 +394,55 @@ src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Custom App Banner (Chrome & other non-Safari browsers) - thin bar */
+        .app-banner-custom {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: linear-gradient(180deg, #f7f7f8 0%, #e8e8ed 100%);
+            border-bottom: 1px solid #c8c8cc;
+            padding: 4px 10px;
+            align-items: center;
+            gap: 6px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        }
+        .app-banner-custom.is-visible { display: flex; }
+        .app-banner-custom-icon {
+            width: 28px; height: 28px; min-width: 28px; min-height: 28px;
+            border-radius: 6px; object-fit: contain; display: block;
+        }
+        .app-banner-custom-text { flex: 1; min-width: 0; }
+        .app-banner-custom-title { font-size: 12px; font-weight: 600; color: #1a1a1a; line-height: 1.15; }
+        .app-banner-custom-subtitle { font-size: 10px; color: #6e6e73; margin-top: 0; }
+        .app-banner-custom-get {
+            display: inline-block; padding: 4px 12px; background: #007aff; color: #fff;
+            font-size: 12px; font-weight: 600; border-radius: 12px; text-decoration: none; white-space: nowrap;
+        }
+        .app-banner-custom-get:hover { background: #0056b3; }
+        .app-banner-custom-close {
+            width: 22px; height: 22px; min-width: 22px; border: none; background: #d1d1d6; color: #6e6e73;
+            border-radius: 50%; font-size: 14px; line-height: 1; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; padding: 0;
+        }
+        .app-banner-custom-close:hover { background: #c0c0c5; color: #1a1a1a; }
+        .app-banner-custom-close::after { content: '×'; }
     </style>
 </head>
 <body>
+    <div id="app-banner-custom" class="app-banner-custom is-visible" aria-label="Get 3D Filmmaker app">
+        <img class="app-banner-custom-icon" src="" alt="" aria-hidden="true" data-src="assets/3D-app.png">
+        <div class="app-banner-custom-text">
+            <div class="app-banner-custom-title">3D Filmmaker</div>
+            <div class="app-banner-custom-subtitle">In-Camera VFX with AR</div>
+        </div>
+        <a class="app-banner-custom-get" href="https://apps.apple.com/ca/app/stopmotion-ar/id6618112316" target="_blank" rel="noopener noreferrer">Get</a>
+        <button type="button" class="app-banner-custom-close" onclick="document.getElementById('app-banner-custom').classList.remove('is-visible'); sessionStorage.setItem('3d-filmmaker-banner-dismissed', '1');" aria-label="Dismiss banner"></button>
+    </div>
     <div class="page">
         <div class="glow-orb"></div>
         <div class="grid-texture"></div>
@@ -385,8 +463,8 @@ src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
                     <p>3D Filmmaker is an augmented reality filmmaking app that lets you create scenes with tracked 3D objects, virtual backgrounds, and animated characters—right inside your real environment. No complicated setup and no physical green screen required.</p>
                     <p style="margin-top: 1rem;">Place and anchor elements to walls, floors, and real-world surfaces, then film from different angles while everything stays locked in place. Set your shot, direct your actors, and capture the scene with video and audio recorded in-app.</p>
                     <div class="hero-actions">
-                        <a class="app-store-badge" href="https://apps.apple.com/ca/app/stopmotion-ar/id6618112316" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
-                            <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store">
+                        <a class="app-store-cta" href="https://apps.apple.com/ca/app/stopmotion-ar/id6618112316" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                            <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
                         </a>
                         <a class="btn" href="3d-filmmaker-contact.html">Get in Touch</a>
                         <a class="btn secondary" href="3d-filmmaker-policy.html">Privacy & Data Policy</a>
@@ -442,5 +520,17 @@ src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
         </div>
     </div>
     <script src="assets/google-ads-conversions.js"></script>
+    <script>
+        (function() {
+            var el = document.getElementById('app-banner-custom');
+            if (!el) return;
+            var ua = navigator.userAgent;
+            var isIOS = /iPhone|iPad|iPod/.test(ua);
+            var isSafari = /Safari/.test(ua) && !/Chrome|CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+            if (sessionStorage.getItem('3d-filmmaker-banner-dismissed') || (isIOS && isSafari)) el.classList.remove('is-visible');
+            var img = el.querySelector('.app-banner-custom-icon');
+            if (img && img.dataset.src) img.src = window.location.origin + '/' + img.dataset.src;
+        })();
+    </script>
 </body>
 </html>
