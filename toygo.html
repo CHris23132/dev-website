@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://christopher-walsh-apps.com/">
+    <title>TOYGO - Bring Your Toys to Life</title>
+    <meta name="description" content="Make animated movies with your toys and action figures. TOYGO uses AI to animate photos of your toys into smooth, dynamic videos.">
+    <link rel="icon" type="image/png" href="assets/chris-favicon2.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11202136687"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11202136687');
+    </script>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '711127870519369');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-dark: #0f0a18;
+            --bg-mid: #1a0f2e;
+            --glow: #a855f7;
+            --accent: #c084fc;
+            --mint: #e9d5ff;
+            --text: #f3f2ed;
+            --muted: rgba(243, 242, 237, 0.7);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top, rgba(168, 85, 247, 0.2), transparent 45%),
+                        radial-gradient(circle at 80% 30%, rgba(139, 92, 246, 0.15), transparent 50%),
+                        linear-gradient(160deg, var(--bg-dark), var(--bg-mid));
+            min-height: 100vh;
+        }
+
+        .page { position: relative; overflow: hidden; }
+
+        .glow-orb {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 70%);
+            filter: blur(10px);
+            top: -120px;
+            right: -140px;
+            z-index: 0;
+        }
+
+        .grid-texture {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.35;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo {
+            height: 96px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .nav-links { display: flex; gap: 1.5rem; }
+
+        .nav-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover { color: var(--glow); }
+
+        .hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            align-items: center;
+            margin-top: 3.5rem;
+        }
+
+        .hero-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-text p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 999px;
+            border: none;
+            font-weight: 600;
+            text-decoration: none;
+            color: #0f0a18;
+            background: linear-gradient(120deg, var(--glow), var(--accent));
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(168, 85, 247, 0.5);
+            box-shadow: none;
+        }
+
+        .btn:hover { transform: translateY(-2px); }
+
+        .app-store-cta {
+            display: inline-block;
+            line-height: 0;
+            padding: 8px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.6),
+                        0 0 24px 4px rgba(168, 85, 247, 0.25);
+            animation: app-store-pulse 2s ease-in-out infinite,
+                       app-store-glow 2s ease-in-out infinite;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .app-store-cta:hover {
+            opacity: 1;
+            animation: app-store-pulse-hover 2s ease-in-out infinite,
+                       app-store-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes app-store-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        @keyframes app-store-pulse-hover {
+            0%, 100% { transform: translateY(-3px) scale(1.02); }
+            50% { transform: translateY(-3px) scale(1.06); }
+        }
+
+        @keyframes app-store-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.8),
+                            0 0 20px 6px rgba(168, 85, 247, 0.35);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(168, 85, 247, 0.4),
+                            0 0 32px 12px rgba(168, 85, 247, 0.5);
+            }
+        }
+
+        .app-store-badge {
+            height: 44px;
+            width: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-card {
+            background: rgba(15, 10, 24, 0.7);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 24px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            animation: floatIn 1s ease forwards;
+        }
+
+        .hero-card span {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(15, 10, 24, 0.9);
+            color: var(--glow);
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-card img {
+            width: 100%;
+            border-radius: 16px;
+            display: block;
+        }
+
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 0.9rem;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: var(--mint);
+        }
+
+        .product-gallery { margin-top: 4rem; }
+
+        .product-gallery h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .product-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-gallery-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-gallery-grid img:hover { transform: scale(1.02); }
+
+        .value-grid {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .value-card {
+            background: rgba(26, 15, 46, 0.7);
+            border-radius: 18px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 180px;
+        }
+
+        .value-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+            color: var(--glow);
+        }
+
+        .value-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .strip {
+            margin-top: 3.5rem;
+            background: linear-gradient(120deg, rgba(168, 85, 247, 0.2), rgba(139, 92, 246, 0.15));
+            border-radius: 18px;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .strip h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+
+        .strip p { color: var(--muted); max-width: 520px; }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        @keyframes floatIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; align-items: flex-start; }
+            .brand-logo { height: 80px; }
+            .nav-links { flex-wrap: wrap; }
+            .product-gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="glow-orb"></div>
+        <div class="grid-texture"></div>
+        <div class="container">
+            <div class="top-bar">
+                <div class="brand">
+                    <img src="assets/TOYO-logo.png" alt="TOYGO" class="brand-logo">
+                </div>
+                <nav class="nav-links">
+                    <a class="nav-link" href="toygo-policy.html">Policy</a>
+                    <a class="nav-link" href="toygo-contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Bring Your Toys to Life</h1>
+                    <p>Make your toys and action figures come to life with TOYGO. Make animated movies with your toys and action figures.</p>
+                    <p style="margin-top: 1rem;">Transform your static toys and action figures into living, breathing stars with TOYGO — the revolutionary mobile app that uses advanced AI video models to animate photos of your toys into smooth, dynamic videos. Whether it's superheroes swinging into action, dinosaurs rampaging through cities, or your custom LEGO creations embarking on epic quests, TOYGO harnesses cutting-edge image-to-video AI to make your toys come alive in seconds, no stop-motion or complex editing required!</p>
+                    <div class="hero-actions">
+                        <a class="app-store-cta" href="#" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                            <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
+                        </a>
+                        <a class="btn" href="toygo-contact.html">Get in Touch</a>
+                        <a class="btn secondary" href="toygo-policy.html">Privacy & Data Policy</a>
+                    </div>
+                    <div class="privacy-badge">Videos saved locally on device. No data collected or shared.</div>
+                </div>
+                <div class="hero-card">
+                    <span>AI • Toys • Movies</span>
+                    <img src="assets/1.png" alt="TOYGO - Bring your toys to life">
+                </div>
+            </section>
+
+            <section class="product-gallery">
+                <h2>See TOYGO in Action</h2>
+                <div class="product-gallery-grid">
+                    <img src="assets/IMG_5600.jpg" alt="TOYGO animated toy video">
+                    <img src="assets/IMG_5599.jpg" alt="TOYGO action figure animation">
+                    <img src="assets/IMG_5602.jpg" alt="TOYGO toy movie">
+                    <img src="assets/IMG_5604.jpg" alt="TOYGO AI animation">
+                </div>
+            </section>
+
+            <section class="value-grid">
+                <div class="value-card">
+                    <h3>How It Works</h3>
+                    <p>Snap or upload a clear photo of your toy. Describe the adventure with a detailed prompt. TOYGO's AI instantly creates a fluid animated clip — then add music, sound effects, and dialogue.</p>
+                </div>
+                <div class="value-card">
+                    <h3>AI Video Animation</h3>
+                    <p>State-of-the-art image-to-video AI for realistic 5–30 second clips with natural movements, expressions, and physics that truly make your toys feel alive.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Custom Storytelling</h3>
+                    <p>Direct every detail through prompts: character actions, emotions, camera angles, and multi-toy interactions for team battles or funny skits.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Dialogue & Voice</h3>
+                    <p>Add spoken lines via text — TOYGO generates synced mouth movements and natural-sounding AI voices for your characters.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Audio Magic</h3>
+                    <p>Hundreds of royalty-free tracks and immersive sound effects. Combine clips, add transitions and titles to craft full mini-movies and viral shorts.</p>
+                </div>
+                <div class="value-card">
+                    <h3>HD Export & Sharing</h3>
+                    <p>Download watermark-free HD videos and share to TikTok, Instagram Reels, YouTube Shorts, or family albums. Your toys aren't just collectibles — they're ready for the spotlight.</p>
+                </div>
+            </section>
+
+            <section class="strip">
+                <div>
+                    <h2>Free to Spark Your Imagination</h2>
+                    <p>Daily free animations to get started. Unlock unlimited generations, longer clips, premium music and SFX, ad-free editing, and priority AI processing with TOYGO Pro. Download TOYGO today and direct your own toy-powered cinematic universe!</p>
+                </div>
+                <a class="btn" href="toygo-contact.html">Contact Us</a>
+            </section>
+
+            <footer>
+                <p>Questions? Email <a href="mailto:play3dinc@gmail.com" style="color: var(--glow); text-decoration: none;">play3dinc@gmail.com</a> or call <a href="tel:905-979-8389" style="color: var(--glow); text-decoration: none;">905-979-8389</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/google-ads-conversions.js"></script>
+</body>
+</html>
