@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6758130529">
+    <base href="https://christopher-walsh-apps.com/">
+    <title>Download Bumper Bids – Make Up to $100 Your First Month | Ontario Canada</title>
+    <meta name="description" content="POV: Earning money just by driving around your town. Bumper Bids is now live in Ontario. Download free and start earning.">
+    <link rel="icon" type="image/png" href="assets/chris-favicon2.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11202136687"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11202136687');
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '711127870519369');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=711127870519369&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-dark: #0f151a;
+            --bg-mid: #1a2a33;
+            --glow: #f7c843;
+            --accent: #ff7a3d;
+            --mint: #2de2a8;
+            --text: #f3f2ed;
+            --muted: rgba(243, 242, 237, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top, rgba(247, 200, 67, 0.2), transparent 45%),
+                        radial-gradient(circle at 20% 70%, rgba(45, 226, 168, 0.15), transparent 55%),
+                        linear-gradient(160deg, var(--bg-dark), var(--bg-mid));
+            min-height: 100vh;
+        }
+
+        .page {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-orb {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(255, 122, 61, 0.35), transparent 70%);
+            filter: blur(10px);
+            top: -120px;
+            right: -140px;
+            z-index: 0;
+        }
+
+        .grid-texture {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.35;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Custom App Banner (Chrome & other non-Safari) – Apple-style "Get" */
+        .app-banner-custom {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: linear-gradient(180deg, #f7f7f8 0%, #e8e8ed 100%);
+            border-bottom: 1px solid #c8c8cc;
+            padding: 4px 10px;
+            align-items: center;
+            gap: 6px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        }
+
+        .app-banner-custom.is-visible {
+            display: flex;
+        }
+
+        .app-banner-custom-icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            min-height: 28px;
+            border-radius: 6px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .app-banner-custom-text { flex: 1; min-width: 0; }
+        .app-banner-custom-title { font-size: 12px; font-weight: 600; color: #1a1a1a; line-height: 1.15; }
+        .app-banner-custom-subtitle { font-size: 10px; color: #6e6e73; margin-top: 0; }
+
+        .app-banner-custom-get {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #007aff;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .app-banner-custom-get:hover { background: #0056b3; }
+        .app-banner-custom-get:active { transform: scale(0.98); }
+
+        .app-banner-custom-close {
+            width: 22px; height: 22px; min-width: 22px;
+            border: none;
+            background: #d1d1d6;
+            color: #6e6e73;
+            border-radius: 50%;
+            font-size: 14px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            transition: background 0.2s, color 0.2s;
+        }
+        .app-banner-custom-close:hover { background: #c0c0c5; color: #1a1a1a; }
+        .app-banner-custom-close::after { content: '×'; }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.6rem;
+            letter-spacing: 2px;
+            color: var(--text);
+        }
+
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover { color: var(--glow); }
+
+        /* Ontario badge */
+        .ontario-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(45, 226, 168, 0.25), rgba(247, 200, 67, 0.2));
+            border: 1px solid rgba(45, 226, 168, 0.5);
+            color: var(--mint);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            align-items: center;
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+        }
+
+        .hero-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            line-height: 1.05;
+        }
+
+        .hero-text .pov {
+            color: var(--glow);
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .hero-text p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .app-store-cta {
+            display: inline-block;
+            line-height: 0;
+            padding: 8px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 0 0 0 rgba(247, 200, 67, 0.6),
+                        0 0 24px 4px rgba(247, 200, 67, 0.25);
+            animation: app-store-pulse 2s ease-in-out infinite,
+                       app-store-glow 2s ease-in-out infinite;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .app-store-cta:hover {
+            opacity: 1;
+            animation: app-store-pulse-hover 2s ease-in-out infinite,
+                       app-store-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes app-store-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+        @keyframes app-store-pulse-hover {
+            0%, 100% { transform: translateY(-3px) scale(1.02); }
+            50% { transform: translateY(-3px) scale(1.06); }
+        }
+        @keyframes app-store-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 2px rgba(247, 200, 67, 0.8),
+                            0 0 20px 6px rgba(247, 200, 67, 0.35);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(247, 200, 67, 0.4),
+                            0 0 32px 12px rgba(247, 200, 67, 0.5);
+            }
+        }
+
+        .app-store-badge {
+            height: 44px;
+            width: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 999px;
+            border: none;
+            font-weight: 600;
+            text-decoration: none;
+            color: #111;
+            background: linear-gradient(120deg, var(--glow), var(--accent));
+            box-shadow: 0 10px 30px rgba(255, 122, 61, 0.25);
+            transition: transform 0.3s ease;
+        }
+        .btn:hover { transform: translateY(-2px); }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .hero-card {
+            background: rgba(15, 21, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            animation: floatIn 1s ease forwards;
+        }
+        .hero-card img { width: 100%; border-radius: 16px; display: block; }
+        .hero-card span {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(15, 21, 26, 0.8);
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .money-highlight {
+            color: var(--mint);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4em;
+            letter-spacing: 1px;
+        }
+
+        /* Social proof section */
+        .social-section {
+            margin-top: 4rem;
+        }
+
+        .social-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.4rem;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-section .sub {
+            text-align: center;
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tiktok-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tiktok-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .tiktok-wrap blockquote {
+            margin: 0;
+        }
+
+        .cta-strip {
+            margin-top: 3.5rem;
+            background: linear-gradient(120deg, rgba(45, 226, 168, 0.2), rgba(255, 122, 61, 0.2));
+            border-radius: 18px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .cta-strip h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-strip p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-strip .hero-actions {
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        @keyframes floatIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; align-items: flex-start; }
+            .nav-links { flex-wrap: wrap; }
+            .container { padding-top: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- App banner: Apple/Chrome-style "Get" – shown on non-Safari (Safari uses Smart App Banner) -->
+    <div id="app-banner-custom" class="app-banner-custom is-visible" aria-label="Get Bumper Bids Driver app">
+        <img class="app-banner-custom-icon" src="" alt="" aria-hidden="true" data-src="assets/bumper-bids-logo.PNG">
+        <div class="app-banner-custom-text">
+            <div class="app-banner-custom-title">Bumper Bids Driver</div>
+            <div class="app-banner-custom-subtitle">Earn while you drive – now in Ontario</div>
+        </div>
+        <a class="app-banner-custom-get" href="https://apps.apple.com/ca/app/bumber-bids-driver/id6758130529" target="_blank" rel="noopener noreferrer">Get</a>
+        <button type="button" class="app-banner-custom-close" onclick="document.getElementById('app-banner-custom').classList.remove('is-visible'); sessionStorage.setItem('bumper-bids-banner-dismissed', '1');" aria-label="Dismiss banner"></button>
+    </div>
+
+    <div class="page">
+        <div class="glow-orb"></div>
+        <div class="grid-texture"></div>
+        <div class="container">
+            <div class="top-bar">
+                <div class="brand">Bumper Bids</div>
+                <nav class="nav-links">
+                    <a class="nav-link" href="bumper-bids.html">Home</a>
+                    <a class="nav-link" href="bumper-bids-policy.html">Policy</a>
+                    <a class="nav-link" href="bumper-bids-contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <section class="hero">
+                <div class="hero-text">
+                    <span class="ontario-badge">Now live in Ontario, Canada</span>
+                    <h1>Make up to <span class="money-highlight">$100</span> your first month</h1>
+                    <p class="pov">POV: Earning money just by driving around your town.</p>
+                    <p>Bumper Bids pays you to promote local businesses on your car. Drive your normal commute, run errands, or take the usual routes—and earn real rewards. No extra trips. No hassle. Just drive and get paid.</p>
+                    <div class="hero-actions">
+                        <a class="app-store-cta" href="https://apps.apple.com/ca/app/bumber-bids-driver/id6758130529" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                            <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
+                        </a>
+                        <a class="btn secondary" href="bumper-bids-policy.html">Privacy & Data Policy</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <span>Live in Ontario</span>
+                    <img src="assets/banner-image.png" alt="Bumper Bids – earn while you drive">
+                </div>
+            </section>
+
+            <section class="social-section">
+                <h2>See What Drivers Are Saying</h2>
+                <p class="sub">Real people. Real drives. Real earnings.</p>
+                <div class="tiktok-grid">
+                    <div class="tiktok-wrap">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bumper.bids/video/7606607799929408786" data-video-id="7606607799929408786" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@bumper.bids" href="https://www.tiktok.com/@bumper.bids?refer=embed">@bumper.bids</a> POV: app that pays you to promote local businesses <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="foryou" target="_blank" href="https://www.tiktok.com/tag/foryou?refer=embed">#foryou</a> <a title="passiveincome" target="_blank" href="https://www.tiktok.com/tag/passiveincome?refer=embed">#passiveincome</a> <a title="sidehustle" target="_blank" href="https://www.tiktok.com/tag/sidehustle?refer=embed">#sidehustle</a> <a target="_blank" title="♬ original sound - Bumper Bids" href="https://www.tiktok.com/music/original-sound-7606607832931191560?refer=embed">♬ original sound - Bumper Bids</a> </section> </blockquote>
+                    </div>
+                </div>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </section>
+
+            <section class="cta-strip">
+                <h2>Start Earning Today</h2>
+                <p>Join Ontario drivers turning their commute into cash. Free to download. No commitment.</p>
+                <div class="hero-actions">
+                    <a class="app-store-cta" href="https://apps.apple.com/ca/app/bumber-bids-driver/id6758130529" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                        <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
+                    </a>
+                </div>
+            </section>
+
+            <footer>
+                <p>Questions? Email <a href="mailto:play3dinc@gmail.com" style="color: var(--glow); text-decoration: none;">play3dinc@gmail.com</a> or call <a href="tel:905-979-8389" style="color: var(--glow); text-decoration: none;">905-979-8389</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/google-ads-conversions.js"></script>
+    <script>
+        (function() {
+            var el = document.getElementById('app-banner-custom');
+            if (!el) return;
+            var ua = navigator.userAgent;
+            var isIOS = /iPhone|iPad|iPod/.test(ua);
+            var isSafari = /Safari/.test(ua) && !/Chrome|CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+            if (sessionStorage.getItem('bumper-bids-banner-dismissed') || (isIOS && isSafari)) {
+                el.classList.remove('is-visible');
+            }
+            var img = el.querySelector('.app-banner-custom-icon');
+            if (img && img.dataset.src) img.src = window.location.origin + '/' + img.dataset.src;
+        })();
+    </script>
+</body>
+</html>
