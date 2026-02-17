@@ -163,30 +163,120 @@
         .app-banner-custom-close:hover { background: #c0c0c5; color: #1a1a1a; }
         .app-banner-custom-close::after { content: '×'; }
 
-        .top-bar {
+        /* OFFER PAGE: full-width headline strip */
+        .offer-headline {
+            width: 100%;
+            text-align: center;
+            padding: 1.25rem 1rem;
+            background: linear-gradient(90deg, rgba(255, 122, 61, 0.35), rgba(247, 200, 67, 0.4), rgba(255, 122, 61, 0.35));
+            border-bottom: 2px solid var(--glow);
+            position: relative;
+            z-index: 2;
+        }
+        .offer-headline h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.2;
+            text-shadow: 0 0 30px rgba(247, 200, 67, 0.3);
+        }
+        .offer-headline .kick {
+            color: var(--glow);
+            display: block;
+            font-size: 0.55em;
+            letter-spacing: 3px;
+            margin-bottom: 0.2em;
+        }
+
+        /* Hero title under banner – centre aligned */
+        .hero-title {
+            text-align: center;
+            padding: 1.5rem 1rem 0.5rem;
+        }
+        .hero-title-line {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--mint);
+            margin: 0 0 0.35rem 0;
+        }
+        .hero-title-main {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        /* Primary CTA block – unmissable */
+        .cta-block {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin: 1.5rem 0 0;
+        }
+        .cta-block .cta-head {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        .cta-block .cta-sub {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .cta-block .cta-buttons {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
             gap: 1rem;
         }
+        .cta-block-badge .app-store-badge { height: 50px; }
 
-        .brand {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.6rem;
-            letter-spacing: 2px;
-            color: var(--text);
+        /* Hero image under first CTA */
+        .hero-image-under-cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .hero-image-under-cta img {
+            width: 100%;
+            max-width: 720px;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
         }
 
-        .nav-links { display: flex; gap: 1.5rem; }
-        .nav-link {
-            color: var(--muted);
+        .cta-download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
             text-decoration: none;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
+            color: #111;
+            background: linear-gradient(120deg, var(--glow), var(--accent));
+            box-shadow: 0 8px 24px rgba(255, 122, 61, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            min-height: 52px;
         }
-        .nav-link:hover { color: var(--glow); }
+        .cta-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255, 122, 61, 0.5);
+        }
+        .cta-download-btn .btn-text { margin-right: 0.5rem; }
+        .cta-download-btn .app-store-badge { height: 28px; }
 
         /* Ontario badge */
         .ontario-badge {
@@ -206,37 +296,35 @@
         .hero {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: center;
-            margin-top: 2.5rem;
-            padding-top: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .hero-text h1 {
+        .hero-text h2 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
             text-transform: uppercase;
-            line-height: 1.05;
         }
 
         .hero-text .pov {
             color: var(--glow);
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 500;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-style: italic;
         }
 
         .hero-text p {
             color: var(--muted);
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.7;
         }
 
         .hero-actions {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -336,24 +424,62 @@
             letter-spacing: 1px;
         }
 
-        /* Social proof section */
+        /* As Seen on TikTok */
         .social-section {
-            margin-top: 4rem;
+            margin-top: 3.5rem;
         }
 
         .social-section h2 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.4rem;
-            letter-spacing: 2px;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .social-section .sub {
             text-align: center;
             color: var(--muted);
-            font-size: 1rem;
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Long-form offer sections – keep them scrolling */
+        .offer-section {
+            margin-top: 3rem;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .offer-section h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--glow);
+            margin-bottom: 0.75rem;
+        }
+
+        .offer-section p {
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .offer-section ul {
+            color: var(--muted);
+            line-height: 1.8;
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .offer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .offer-cta-inline {
+            text-align: center;
+            margin: 2rem 0;
         }
 
         .tiktok-grid {
@@ -413,9 +539,7 @@
         }
 
         @media (max-width: 768px) {
-            .top-bar { flex-direction: column; align-items: flex-start; }
-            .nav-links { flex-wrap: wrap; }
-            .container { padding-top: 3rem; }
+            .container { padding-top: 2rem; }
         }
     </style>
 </head>
@@ -434,22 +558,39 @@
     <div class="page">
         <div class="glow-orb"></div>
         <div class="grid-texture"></div>
+
+        <!-- OFFER: Eye-grabbing headline across top -->
+        <header class="offer-headline">
+            <span class="kick">Now live in Ontario</span>
+            <h1>Stop Driving for Free — Your Car Could Be Making You $100+ This Month</h1>
+        </header>
+
         <div class="container">
-            <div class="top-bar">
-                <div class="brand">Bumper Bids</div>
-                <nav class="nav-links">
-                    <a class="nav-link" href="bumper-bids.html">Home</a>
-                    <a class="nav-link" href="bumper-bids-policy.html">Policy</a>
-                    <a class="nav-link" href="bumper-bids-contact.html">Contact</a>
-                </nav>
+            <!-- Hero title under banner – centre aligned -->
+            <section class="hero-title">
+                <p class="hero-title-line">Live in Ontario, Canada</p>
+                <h2 class="hero-title-main">Make up to <span class="money-highlight">$100</span> your first month</h2>
+            </section>
+
+            <!-- Clear primary CTA -->
+            <section class="cta-block">
+                <p class="cta-head">Download free. Start earning.</p>
+                <p class="cta-sub">Ontario drivers are getting paid to drive their normal routes. Join them.</p>
+                <div class="cta-buttons">
+                    <a class="app-store-cta cta-block-badge" href="https://apps.apple.com/ca/app/bumber-bids-driver/id6758130529" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                        <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
+                    </a>
+                </div>
+            </section>
+
+            <div class="hero-image-under-cta">
+                <img src="assets/banner-image.png" alt="Bumper Bids – earn while you drive in Ontario">
             </div>
 
             <section class="hero">
                 <div class="hero-text">
-                    <span class="ontario-badge">Now live in Ontario, Canada</span>
-                    <h1>Make up to <span class="money-highlight">$100</span> your first month</h1>
                     <p class="pov">POV: Earning money just by driving around your town.</p>
-                    <p>Bumper Bids pays you to promote local businesses on your car. Drive your normal commute, run errands, or take the usual routes—and earn real rewards. No extra trips. No hassle. Just drive and get paid.</p>
+                    <p>Bumper Bids pays you to promote local businesses on your car. Same commute. Same errands. Extra cash. No extra trips—just drive and get paid.</p>
                     <div class="hero-actions">
                         <a class="app-store-cta" href="https://apps.apple.com/ca/app/bumber-bids-driver/id6758130529" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
                             <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
@@ -464,8 +605,8 @@
             </section>
 
             <section class="social-section">
-                <h2>See What Drivers Are Saying</h2>
-                <p class="sub">Real people. Real drives. Real earnings.</p>
+                <h2>As Seen on TikTok</h2>
+                <p class="sub">Drivers are sharing how they earn while they drive.</p>
                 <div class="tiktok-grid">
                     <div class="tiktok-wrap">
                         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bumper.bids/video/7606607799929408786" data-video-id="7606607799929408786" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@bumper.bids" href="https://www.tiktok.com/@bumper.bids?refer=embed">@bumper.bids</a> POV: app that pays you to promote local businesses <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="foryou" target="_blank" href="https://www.tiktok.com/tag/foryou?refer=embed">#foryou</a> <a title="passiveincome" target="_blank" href="https://www.tiktok.com/tag/passiveincome?refer=embed">#passiveincome</a> <a title="sidehustle" target="_blank" href="https://www.tiktok.com/tag/sidehustle?refer=embed">#sidehustle</a> <a target="_blank" title="♬ original sound - Bumper Bids" href="https://www.tiktok.com/music/original-sound-7606607832931191560?refer=embed">♬ original sound - Bumper Bids</a> </section> </blockquote>
@@ -474,9 +615,36 @@
                 <script async src="https://www.tiktok.com/embed.js"></script>
             </section>
 
+            <!-- More offer copy – keep them scrolling -->
+            <section class="offer-section">
+                <h3>Why Ontario drivers are switching to Bumper Bids</h3>
+                <p>You're already on the road. Groceries, school drop-off, work, gym—every mile is a chance to earn. Bumper Bids turns your bumper into a billboard that pays you. Local businesses want to reach people exactly where you're driving. You get paid. They get seen. No interviews, no schedule, no boss.</p>
+                <p>Real rewards. Real payouts. The app tracks your driven routes and matches you with brands in your area. More driving in high-value zones means more coins—and coins turn into real cash and perks.</p>
+            </section>
+
+            <section class="offer-section">
+                <h3>What you get</h3>
+                <ul>
+                    <li><strong>Free to download</strong> — no signup fee, no commitment</li>
+                    <li><strong>Earn on your normal drive</strong> — no extra trips required</li>
+                    <li><strong>Payments and rewards</strong> — cash out coins for real value</li>
+                    <li><strong>Ontario live now</strong> — available across the province</li>
+                </ul>
+            </section>
+
+            <section class="offer-section">
+                <h3>How it works</h3>
+                <p>Download the app, complete a quick setup, and start driving. Bumper Bids runs in the background and credits you for the routes you already take. The more you drive in areas where brands want visibility, the more you earn. It's that simple.</p>
+                <div class="offer-cta-inline">
+                    <a class="app-store-cta" href="https://apps.apple.com/ca/app/bumber-bids-driver/id6758130529" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                        <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
+                    </a>
+                </div>
+            </section>
+
             <section class="cta-strip">
-                <h2>Start Earning Today</h2>
-                <p>Join Ontario drivers turning their commute into cash. Free to download. No commitment.</p>
+                <h2>Your next drive could be your first payout</h2>
+                <p>Join Ontario drivers who stopped leaving money on the table. Free to download. No commitment.</p>
                 <div class="hero-actions">
                     <a class="app-store-cta" href="https://apps.apple.com/ca/app/bumber-bids-driver/id6758130529" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
                         <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
