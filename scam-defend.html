@@ -248,31 +248,18 @@
             margin: 4px auto 14px;
         }
         .phone-screen {
-            background: linear-gradient(180deg, #15222b, #10181f);
+            background: #f4f1ea;
             border-radius: 22px;
-            padding: 1.1rem 1rem 1.25rem;
-            min-height: 420px;
+            padding: 0;
+            overflow: hidden;
+            line-height: 0;
         }
-        .phone-screen h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.45rem;
-            letter-spacing: 1px;
-            margin-bottom: 0.35rem;
-        }
-        .phone-screen .sub { color: var(--muted); font-size: 0.8rem; margin-bottom: 1.1rem; }
-        .phrase-card {
-            background: rgba(142, 201, 192, 0.1);
-            border: 1px solid rgba(142, 201, 192, 0.28);
-            border-radius: 16px;
-            padding: 1rem;
-            margin-bottom: 0.85rem;
-        }
-        .phrase-card .who { font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: var(--glow); }
-        .phrase-card .phrase {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.55rem;
-            letter-spacing: 1.5px;
-            margin-top: 0.25rem;
+        .phone-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            object-position: top center;
         }
         .placeholder-note {
             margin-top: 0.75rem;
@@ -464,27 +451,14 @@
                     </div>
                 </div>
                 <div class="phone-wrap">
-                    <div class="phone" aria-hidden="true">
+                    <div class="phone">
                         <div class="phone-screen">
-                            <h2>Trusted circle</h2>
-                            <p class="sub">Shared phrases stay between you and the people you invite.</p>
-                            <div class="phrase-card">
-                                <div class="who">Mom · Accepted</div>
-                                <div class="phrase">Harbour Lantern</div>
-                            </div>
-                            <div class="phrase-card">
-                                <div class="who">Partner · Accepted</div>
-                                <div class="phrase">Cedar Window</div>
-                            </div>
-                            <div class="phrase-card">
-                                <div class="who">Grandad · Accepted</div>
-                                <div class="phrase">Quiet Maple</div>
-                            </div>
+                            <img src="assets/appscreenshot.PNG" alt="ScamDefend app home: Protection dashboard with Trust Circle, Invite, Verify, and Secret manager">
                         </div>
                     </div>
                 </div>
             </section>
-            <p class="placeholder-note">Product mockup — replace with real ScamDefend screenshots when available. App Store link is a placeholder until the listing URL is ready.</p>
+            <p class="placeholder-note">App Store link is a placeholder until the listing URL is ready.</p>
 
             <section class="section" id="why">
                 <h2>When something feels urgent, verify first.</h2>
