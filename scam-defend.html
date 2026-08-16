@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://chris23132.github.io/dev-website/">
+    <title>ScamDefend — Verify Loved Ones Before You Act</title>
+    <meta name="description" content="ScamDefend gives families a private way to verify urgent requests before sending money, sharing codes, or changing sensitive account information.">
+    <link rel="canonical" href="https://chris23132.github.io/dev-website/scam-defend.html">
+    <link rel="icon" type="image/png" href="assets/chris-favicon2.png">
+    <link rel="apple-touch-icon" href="assets/chris-favicon2.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ScamDefend — Verify Loved Ones Before You Act">
+    <meta property="og:description" content="A private safety check for your family. Verify loved ones before you act.">
+    <meta property="og:url" content="https://chris23132.github.io/dev-website/scam-defend.html">
+    <meta property="og:image" content="https://chris23132.github.io/dev-website/assets/chris-favicon2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ScamDefend — Verify Loved Ones Before You Act">
+    <meta name="twitter:description" content="A private safety check for your family. Verify loved ones before you act.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11202136687"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11202136687');
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-dark: #0b1218;
+            --bg-mid: #142028;
+            --glow: #8ec9c0;
+            --accent: #d4b483;
+            --mint: #9fd4c8;
+            --text: #f3f2ed;
+            --muted: rgba(243, 242, 237, 0.72);
+            --card: rgba(16, 26, 34, 0.78);
+            --line: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top, rgba(142, 201, 192, 0.16), transparent 46%),
+                        radial-gradient(circle at 85% 20%, rgba(212, 180, 131, 0.12), transparent 48%),
+                        linear-gradient(160deg, var(--bg-dark), var(--bg-mid));
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .page { position: relative; overflow: hidden; }
+
+        .glow-orb {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(142, 201, 192, 0.32), transparent 70%);
+            filter: blur(10px);
+            top: -120px;
+            right: -140px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .grid-texture {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.28;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--text);
+            border-radius: 10px;
+            padding: 0.45rem 0.7rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+        }
+
+        .nav-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.92rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus { color: var(--glow); outline: none; }
+
+        .nav-cta {
+            color: #111 !important;
+            background: linear-gradient(120deg, var(--glow), var(--accent));
+            padding: 0.55rem 0.95rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.78rem !important;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            align-items: center;
+            margin-top: 3.2rem;
+        }
+
+        .kicker {
+            display: inline-block;
+            color: var(--glow);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.6rem, 7vw, 5.2rem);
+            letter-spacing: 2px;
+            line-height: 0.95;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-text p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 36rem;
+        }
+
+        .trust-line {
+            margin-top: 0.9rem;
+            font-size: 0.92rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            margin-top: 1.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .app-store-cta {
+            display: inline-block;
+            line-height: 0;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 0 0 2px rgba(142, 201, 192, 0.55), 0 0 22px 4px rgba(142, 201, 192, 0.2);
+            animation: app-store-pulse 2s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+        .app-store-cta:hover { transform: translateY(-2px); }
+        @keyframes app-store-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .app-store-badge { height: 44px; width: auto; display: block; }
+
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 999px;
+            border: none;
+            font-weight: 600;
+            text-decoration: none;
+            color: #111;
+            background: linear-gradient(120deg, var(--glow), var(--accent));
+            box-shadow: 0 10px 30px rgba(142, 201, 192, 0.18);
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .btn.secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+        .btn:hover { transform: translateY(-2px); }
+
+        .phone-wrap { display: flex; justify-content: center; }
+        .phone {
+            width: min(280px, 100%);
+            background: #0a0f14;
+            border: 3px solid #2a3640;
+            border-radius: 36px;
+            padding: 14px 12px 22px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+            position: relative;
+            animation: floatIn 1s ease forwards;
+        }
+        .phone::before {
+            content: "";
+            display: block;
+            width: 92px;
+            height: 8px;
+            background: #1c262e;
+            border-radius: 999px;
+            margin: 4px auto 14px;
+        }
+        .phone-screen {
+            background: linear-gradient(180deg, #15222b, #10181f);
+            border-radius: 22px;
+            padding: 1.1rem 1rem 1.25rem;
+            min-height: 420px;
+        }
+        .phone-screen h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.45rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.35rem;
+        }
+        .phone-screen .sub { color: var(--muted); font-size: 0.8rem; margin-bottom: 1.1rem; }
+        .phrase-card {
+            background: rgba(142, 201, 192, 0.1);
+            border: 1px solid rgba(142, 201, 192, 0.28);
+            border-radius: 16px;
+            padding: 1rem;
+            margin-bottom: 0.85rem;
+        }
+        .phrase-card .who { font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: var(--glow); }
+        .phrase-card .phrase {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.55rem;
+            letter-spacing: 1.5px;
+            margin-top: 0.25rem;
+        }
+        .placeholder-note {
+            margin-top: 0.75rem;
+            font-size: 0.72rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .section { margin-top: 4.5rem; }
+        .section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4.5vw, 3.1rem);
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+        .section-lead { color: var(--muted); max-width: 40rem; line-height: 1.7; margin-bottom: 1.75rem; }
+
+        .bubbles {
+            display: grid;
+            gap: 0.75rem;
+            max-width: 640px;
+        }
+        .bubble {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px 18px 18px 6px;
+            padding: 0.85rem 1rem;
+            color: var(--muted);
+            width: fit-content;
+            max-width: 100%;
+        }
+        .bubble.alt {
+            margin-left: auto;
+            border-radius: 18px 18px 6px 18px;
+            background: rgba(142, 201, 192, 0.08);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+        .step {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.4rem;
+            min-height: 180px;
+        }
+        .step-num {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--accent);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+        .step h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.45rem;
+            letter-spacing: 1px;
+            margin: 0.35rem 0 0.5rem;
+        }
+        .step p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+
+        .value-grid, .use-grid, .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.4rem;
+        }
+        .card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.45rem;
+            letter-spacing: 1px;
+            color: var(--glow);
+            margin-bottom: 0.5rem;
+        }
+        .card p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+        .pause {
+            margin-top: 0.85rem;
+            font-size: 0.78rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .strip {
+            margin-top: 3.5rem;
+            background: linear-gradient(120deg, rgba(142, 201, 192, 0.16), rgba(212, 180, 131, 0.16));
+            border-radius: 18px;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .strip h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.1rem; letter-spacing: 2px; }
+        .strip p { color: var(--muted); max-width: 560px; line-height: 1.7; }
+
+        .privacy-box a { color: var(--glow); }
+
+        details.faq {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 0.9rem 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+        details.faq summary {
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+        }
+        details.faq summary::-webkit-details-marker { display: none; }
+        details.faq summary:focus { outline: 2px solid var(--glow); outline-offset: 3px; }
+        details.faq p { color: var(--muted); margin-top: 0.65rem; line-height: 1.65; font-size: 0.95rem; }
+
+        .site-footer {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+        .site-footer .brand-line { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 1px; color: var(--text); }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem 1.25rem;
+            margin: 0.9rem 0 1.1rem;
+        }
+        .footer-links a { color: var(--muted); text-decoration: none; }
+        .footer-links a:hover { color: var(--glow); }
+
+        @keyframes floatIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: inline-flex; }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 0.75rem;
+            }
+            .top-bar { flex-wrap: wrap; }
+            .top-bar.is-open .nav-links { display: flex; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="glow-orb"></div>
+        <div class="grid-texture"></div>
+        <div class="container">
+            <header class="top-bar" id="topBar">
+                <a class="brand" href="scam-defend.html">ScamDefend</a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" id="navToggle">Menu</button>
+                <nav class="nav-links" id="primaryNav">
+                    <a class="nav-link" href="scam-defend.html#how-it-works">How It Works</a>
+                    <a class="nav-link" href="scam-defend.html#why">Why ScamDefend</a>
+                    <a class="nav-link" href="scam-defend.html#faq">FAQ</a>
+                    <a class="nav-link" href="scam-defend-support.html">Support</a>
+                    <a class="nav-link nav-cta" href="#download">Download on the App Store</a>
+                </nav>
+            </header>
+
+            <section class="hero" id="download">
+                <div class="hero-text">
+                    <p class="kicker">A private safety check for your family</p>
+                    <h1>Verify loved ones before you act.</h1>
+                    <p>ScamDefend gives families a private way to verify urgent requests before sending money, sharing codes, or changing sensitive account information.</p>
+                    <p class="trust-line">Private verification for the people you trust most.</p>
+                    <div class="hero-actions">
+                        <a class="app-store-cta" id="appStoreBtn" href="#download" aria-label="Download on the App Store (coming soon)">
+                            <img src="assets/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
+                        </a>
+                        <a class="btn secondary" href="scam-defend.html#how-it-works">See How It Works</a>
+                    </div>
+                </div>
+                <div class="phone-wrap">
+                    <div class="phone" aria-hidden="true">
+                        <div class="phone-screen">
+                            <h2>Trusted circle</h2>
+                            <p class="sub">Shared phrases stay between you and the people you invite.</p>
+                            <div class="phrase-card">
+                                <div class="who">Mom · Accepted</div>
+                                <div class="phrase">Harbour Lantern</div>
+                            </div>
+                            <div class="phrase-card">
+                                <div class="who">Partner · Accepted</div>
+                                <div class="phrase">Cedar Window</div>
+                            </div>
+                            <div class="phrase-card">
+                                <div class="who">Grandad · Accepted</div>
+                                <div class="phrase">Quiet Maple</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <p class="placeholder-note">Product mockup — replace with real ScamDefend screenshots when available. App Store link is a placeholder until the listing URL is ready.</p>
+
+            <section class="section" id="why">
+                <h2>When something feels urgent, verify first.</h2>
+                <p class="section-lead">Impersonation scams often create emotional pressure. Urgency can cause people to act before independently verifying who they are communicating with. ScamDefend adds a simple extra verification step.</p>
+                <div class="bubbles">
+                    <div class="bubble">“I’m in trouble. I need money right now.”</div>
+                    <div class="bubble alt">“Send me the verification code — my account isn’t working.”</div>
+                    <div class="bubble">“I have a new phone number. Don’t tell anyone.”</div>
+                    <div class="bubble alt">Slow down. Verify first. Protect the people who matter.</div>
+                </div>
+            </section>
+
+            <section class="section" id="how-it-works">
+                <h2>How it works</h2>
+                <p class="section-lead">Set this up before a suspicious call or message happens — so you already have a private way to check.</p>
+                <div class="steps">
+                    <article class="step">
+                        <div class="step-num">01</div>
+                        <h3>Build your trusted circle</h3>
+                        <p>Invite parents, grandparents, partners, children, relatives, or other people you trust by email.</p>
+                    </article>
+                    <article class="step">
+                        <div class="step-num">02</div>
+                        <h3>Create a private phrase</h3>
+                        <p>Each accepted relationship receives its own unique shared verification phrase.</p>
+                    </article>
+                    <article class="step">
+                        <div class="step-num">03</div>
+                        <h3>Something doesn’t feel right?</h3>
+                        <p>If you get an unexpected request involving money, codes, accounts, or urgent help — stop before acting.</p>
+                    </article>
+                    <article class="step">
+                        <div class="step-num">04</div>
+                        <h3>Verify</h3>
+                        <p>Contact your loved one independently and use your shared phrase as an additional way to confirm it’s really them.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="use-cases">
+                <h2>A simple check when certainty matters.</h2>
+                <p class="section-lead">ScamDefend does not automatically detect these events. You open it on purpose as a verification tool.</p>
+                <div class="use-grid">
+                    <article class="card">
+                        <h3>Unexpected money requests</h3>
+                        <p>Someone claiming to be a loved one suddenly needs money.</p>
+                        <p class="pause">Pause → Verify → Then decide</p>
+                    </article>
+                    <article class="card">
+                        <h3>Verification codes</h3>
+                        <p>Someone asks you to send them a security or login code.</p>
+                        <p class="pause">Pause → Verify → Then decide</p>
+                    </article>
+                    <article class="card">
+                        <h3>Account changes</h3>
+                        <p>You receive an unexpected request involving banking, passwords, email, or another account.</p>
+                        <p class="pause">Pause → Verify → Then decide</p>
+                    </article>
+                    <article class="card">
+                        <h3>Urgent family messages</h3>
+                        <p>Someone claims there has been an emergency and pressures you to act immediately.</p>
+                        <p class="pause">Pause → Verify → Then decide</p>
+                    </article>
+                    <article class="card">
+                        <h3>Suspicious calls</h3>
+                        <p>A caller sounds like someone you know, but something about the situation doesn’t feel right.</p>
+                        <p class="pause">Pause → Verify → Then decide</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="features">
+                <h2>Designed to stay simple</h2>
+                <div class="feature-grid">
+                    <article class="card">
+                        <h3>Trusted Circles</h3>
+                        <p>Create private connections with loved ones.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Invite Approval</h3>
+                        <p>You control which trusted-circle requests you accept or deny.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Unique Shared Phrases</h3>
+                        <p>Every trusted relationship can have its own verification phrase.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Phrase Rotation</h3>
+                        <p>Generate a fresh phrase whenever you want a new one.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Encrypted Storage</h3>
+                        <p>Phrase data is encrypted before being stored.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Simple by Design</h3>
+                        <p>No complicated cybersecurity knowledge is required.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="strip" id="family">
+                <div>
+                    <h2>Security works better when your family has a plan.</h2>
+                    <p>ScamDefend gives families something they can establish before a suspicious call or message happens. Instead of deciding how to verify someone during an emergency, trusted people already have a private verification method available.</p>
+                </div>
+                <a class="btn" href="#download">Create your trusted circle</a>
+            </section>
+
+            <section class="section privacy-box" id="privacy">
+                <h2>Built around private verification.</h2>
+                <div class="card">
+                    <p>ScamDefend is not a public social network. Trusted relationships require invitations and acceptance. Shared phrases are specific to those relationships. Phrase data is encrypted before storage. You can rotate phrases whenever you want.</p>
+                    <p style="margin-top:1rem;color:var(--muted);">ScamDefend is not marketed as end-to-end encrypted. It is a private verification tool — an additional step, not a guarantee.</p>
+                    <p style="margin-top:1rem;"><a href="scam-defend-policy.html">Read our Privacy Policy →</a></p>
+                </div>
+            </section>
+
+            <section class="section" id="faq">
+                <h2>FAQ</h2>
+                <details class="faq">
+                    <summary>What is ScamDefend?</summary>
+                    <p>ScamDefend is a private verification app that helps trusted people confirm sensitive requests using shared verification phrases.</p>
+                </details>
+                <details class="faq">
+                    <summary>Does ScamDefend automatically detect scams?</summary>
+                    <p>No. ScamDefend does not monitor calls or messages or automatically determine whether something is a scam. It provides a verification method families can use when something seems suspicious.</p>
+                </details>
+                <details class="faq">
+                    <summary>Does ScamDefend guarantee that I won’t be scammed?</summary>
+                    <p>No. ScamDefend provides an additional verification step but cannot guarantee scam prevention.</p>
+                </details>
+                <details class="faq">
+                    <summary>When should I use ScamDefend?</summary>
+                    <p>Before responding to unexpected requests involving money, verification codes, account changes, sensitive information, or urgent situations supposedly involving someone you know.</p>
+                </details>
+                <details class="faq">
+                    <summary>How do shared phrases work?</summary>
+                    <p>Once two users establish a trusted relationship, they receive a shared verification phrase that can be used as an additional identity check.</p>
+                </details>
+                <details class="faq">
+                    <summary>Can I change my phrase?</summary>
+                    <p>Yes. Users can rotate their shared verification phrase.</p>
+                </details>
+                <details class="faq">
+                    <summary>Is my phrase encrypted?</summary>
+                    <p>Phrase data is encrypted before it is stored. This is not the same as end-to-end encryption.</p>
+                </details>
+                <details class="faq">
+                    <summary>Does ScamDefend contact my bank or the police?</summary>
+                    <p>No. ScamDefend is an independent verification tool and does not replace banks, law enforcement, emergency services, or professional advice.</p>
+                </details>
+                <details class="faq">
+                    <summary>Who is ScamDefend for?</summary>
+                    <p>Anyone who wants an additional private verification method with family members, partners, close friends, caregivers, or other trusted people.</p>
+                </details>
+            </section>
+
+            <section class="strip">
+                <div>
+                    <h2>Give your family a way to verify.</h2>
+                    <p>Set up your trusted circle today so that when an unexpected request arrives, you already have another way to confirm it’s really them.</p>
+                    <p style="margin-top:0.6rem;color:var(--accent);">Slow down. Verify first. Protect the people who matter.</p>
+                </div>
+                <a class="btn" href="#download">Download ScamDefend</a>
+            </section>
+
+            <footer class="site-footer">
+                <div class="brand-line">ScamDefend</div>
+                <p>Verify loved ones before you act.</p>
+                <div class="footer-links">
+                    <a href="#download">Download</a>
+                    <a href="scam-defend.html#how-it-works">How It Works</a>
+                    <a href="scam-defend.html#faq">FAQ</a>
+                    <a href="scam-defend-support.html">Support</a>
+                    <a href="scam-defend-policy.html">Privacy Policy</a>
+                    <a href="scam-defend-terms.html">Terms of Use</a>
+                    <a href="index.html">Portfolio</a>
+                </div>
+                <p>© 2026 ScamDefend. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/google-ads-conversions.js"></script>
+    <script>
+        (function () {
+            var bar = document.getElementById('topBar');
+            var btn = document.getElementById('navToggle');
+            if (!bar || !btn) return;
+            btn.addEventListener('click', function () {
+                var open = bar.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        })();
+    </script>
+</body>
+</html>
