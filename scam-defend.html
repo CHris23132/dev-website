@@ -283,6 +283,34 @@
             gap: 0.75rem;
             max-width: 640px;
         }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .why-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.35rem;
+        }
+
+        .why-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 1px;
+            color: var(--glow);
+            margin-bottom: 0.45rem;
+        }
+
+        .why-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         .bubble {
             background: var(--card);
             border: 1px solid var(--line);
@@ -430,7 +458,7 @@
                 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" id="navToggle">Menu</button>
                 <nav class="nav-links" id="primaryNav">
                     <a class="nav-link" href="scam-defend.html#how-it-works">How It Works</a>
-                    <a class="nav-link" href="scam-defend.html#why">Why ScamDefend</a>
+                    <a class="nav-link" href="scam-defend.html#why-use">Why ScamDefend</a>
                     <a class="nav-link" href="scam-defend.html#faq">FAQ</a>
                     <a class="nav-link" href="scam-defend-support.html">Support</a>
                     <a class="nav-link nav-cta" href="#download">Download on the App Store</a>
@@ -468,6 +496,33 @@
                     <div class="bubble alt">“Send me the verification code — my account isn’t working.”</div>
                     <div class="bubble">“I have a new phone number. Don’t tell anyone.”</div>
                     <div class="bubble alt">Slow down. Verify first. Protect the people who matter.</div>
+                </div>
+            </section>
+
+            <section class="section" id="why-use">
+                <h2>Why use ScamDefend?</h2>
+                <p class="section-lead">Today’s impersonation scams can look and sound convincing. ScamDefend gives your family a private verification step for the moments when normal safety checks may not be enough.</p>
+                <div class="why-grid">
+                    <article class="why-card">
+                        <h3>Caller ID can be spoofed</h3>
+                        <p>A scam call may appear to come from your loved one’s real phone number.</p>
+                    </article>
+                    <article class="why-card">
+                        <h3>Accounts can be compromised</h3>
+                        <p>A real messaging, email, or social-media account can be taken over and used to send a convincing request.</p>
+                    </article>
+                    <article class="why-card">
+                        <h3>AI voices can sound real</h3>
+                        <p>AI voice cloning can make a caller sound remarkably like someone you know.</p>
+                    </article>
+                    <article class="why-card">
+                        <h3>Pressure changes decisions</h3>
+                        <p>When someone says “I’ve been arrested” or “I need money now,” emotional pressure can make people skip normal safety advice.</p>
+                    </article>
+                    <article class="why-card">
+                        <h3>Callbacks may not connect</h3>
+                        <p>Your loved one may not answer a callback, leaving you unsure whether the request is genuine.</p>
+                    </article>
                 </div>
             </section>
 
